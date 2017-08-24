@@ -58,20 +58,18 @@ export default class ContainerPlaylist extends Component {
                    <div className="col-sm-7 col-lg-7 col-xl-7">
                        <table className="table">
                           <thead>
-                            <tr>
-                              <th>#</th>
-                              <th>First Name</th>
-                              <th>Last Name</th>
-                              <th>Username</th>
-                            </tr>
+                            <tr></tr>
                           </thead>
                           <tbody>
                             <tr>
-                              <th scope="row">1</th>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>@mdo</td>
-                              </tr>
+                             <td>
+                                <p>Track Name</p>
+                                <p>Collection Name</p> 
+                             </td> 
+                             <td>
+                                 Track ID
+                             </td>
+                            </tr>
                           </tbody>
                         </table>
                    </div>
