@@ -54,7 +54,7 @@ export default class ContainerPlaylist extends Component {
     }
     
     componentWillMount() {
-      fetch('https://itunes.apple.com/search?term=taylor+swift&limit=20')
+      fetch('https://itunes.apple.com/search?term=taylor+swift&limit=200')
       .then((response ) => { 
         return response.json() 
      })
@@ -74,7 +74,7 @@ export default class ContainerPlaylist extends Component {
           <div className="col-sm-3 col-lg-3 col-xl-3"></div>
            <div className="col-sm-8 col-lg-8 col-xl-8">
                <div className="row">
-                   <div className="col-sm-7 col-lg-7 col-xl-7">
+                   <div className="col-sm-7 col-lg-7 col-xl-7 scroll">
                         <Song songslist={this.state.songs}/>
                    </div>
                    <div id="other-charts" className="col-sm-5 col-lg-5 col-xl-5">
