@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../CSS/ContainerPlaylist.css';
 import AlbumIndividual from '../Components/AlbumIndividual.jsx';
+import Song from '../Components/Song.jsx';
 import disco1 from "../img/disco1.jpg";
 import disco2 from "../img/disco2.jpg";
 import disco3 from "../img/disco3.jpg";
@@ -43,13 +44,31 @@ const albumDer = [
 
 
 export default class ContainerPlaylist extends Component {
+    constructor(props) {
+        super(props)
+        
+        this.state = {
+            songs: []
+        }
+        
+    }
+    
+    componentWillMount() {
+      fetch('https://itunes.apple.com/search?term=taylor+swift&limit=20')
+      .then((response ) => { 
+        return response.json() 
+     })
+     .then((individualSong) => { 
+       this.setState({
+           songs:individualSong.results
+       })
+       console.log(this.state.songs)
+     });
+    }
+    
+    
     render() {
         return (
-        
-            
-            
-            
-            
             
         <div className="row">
           <div className="col-sm-3 col-lg-3 col-xl-3"></div>
@@ -61,17 +80,18 @@ export default class ContainerPlaylist extends Component {
                             <tr></tr>
                           </thead>
                           <tbody>
-                            <tr>
-                             <td>
-                                <p>Track Name</p>
-                                <p>Collection Name</p> 
-                             </td> 
-                             <td>
-                                 Track ID
-                             </td>
-                            </tr>
+                              <tr>
+                                <td>
+                                   <p>Track Name</p>
+                                   <p>Collection Name</p> 
+                                </td> 
+                                <td>
+                                    Track ID
+                                </td>
+                              </tr> 
                           </tbody>
                         </table>
+                         <Song songslist={this.state.songs}/>
                    </div>
                    <div id="other-charts" className="col-sm-5 col-lg-5 col-xl-5">
                        <h3 className="text-center">Other Charts</h3>
