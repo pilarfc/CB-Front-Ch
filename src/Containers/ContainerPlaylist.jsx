@@ -75,23 +75,7 @@ export default class ContainerPlaylist extends Component {
            <div className="col-sm-8 col-lg-8 col-xl-8">
                <div className="row">
                    <div className="col-sm-7 col-lg-7 col-xl-7">
-                       <table className="table">
-                          <thead>
-                            <tr></tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                <td>
-                                   <p>Track Name</p>
-                                   <p>Collection Name</p> 
-                                </td> 
-                                <td>
-                                    Track ID
-                                </td>
-                              </tr> 
-                          </tbody>
-                        </table>
-                         <Song songslist={this.state.songs}/>
+                        <Song songslist={this.state.songs}/>
                    </div>
                    <div id="other-charts" className="col-sm-5 col-lg-5 col-xl-5">
                        <h3 className="text-center">Other Charts</h3>

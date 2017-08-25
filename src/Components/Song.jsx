@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import ElementosCancion from '../Components/ElementosCancion.jsx';
+import SongElements from '../Components/SongElements.jsx';
+
 
 
 export default class Song extends Component {
     render() {
-        const pinchesCanciones = this.props.songslist.map(function(result) {
-            return <ElementosCancion nombe={result.trackId} trackName={result.trackName}/>
+        const songsCards = this.props.songslist.map(function(result) {
+            return <SongElements trackName={result.trackName} collectionName={result.collectionName} trackId={result.trackId}/>
         })
         
     return (
-       <ul>
-           {pinchesCanciones}
-       </ul>
+       <div>
+           {songsCards}
+       </div>
     
     )
         
